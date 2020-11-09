@@ -1,9 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const { prefix, bot_info, token } = require('./config.json');
-client.once('ready', () => {
+client.on('ready', () => {
 	console.log(bot_info.name);
 	console.log(bot_info.prefix);
+	client.user.setActivity('bad guys', { type: "WATCHING" });
 });
 
 client.login(token);
