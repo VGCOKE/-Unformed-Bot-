@@ -4,6 +4,7 @@ const { prefix, bot_info, token } = require('./config.json');
 client.on('ready', () => {
 	console.log(bot_info.name);
 	console.log(bot_info.prefix);
+	client.user.setStatus('available');
 	client.user.setActivity('bad guys', { type: "WATCHING" });
 });
 
@@ -16,6 +17,7 @@ client.on('message', message => {
 		message.channel.send(`Total Members : **${message.guild.memberCount}**`);
 	}else if(message.content === `${prefix}server`) {
 		message.channel.send(`Server Name : **${message.guild.name}**`);
+		message.channel.send(`Owner : **${message.guild.owner}**`);
 	}else if(message.content === `${prefix}info`) {
 		message.channel.send(`Username : **${message.author.username}**`);
 		message.channel.send(`ID : **${message.author.id}**`);
