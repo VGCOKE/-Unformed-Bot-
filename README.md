@@ -1,4 +1,5 @@
 # [Unformed Bot]
+- main.js, main config file
 - developing...
 
 ## Invite Link
