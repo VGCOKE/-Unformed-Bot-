@@ -5,7 +5,7 @@
 - Comes with embeds!
 
 ## Welcome Message
-- Comming Soon
+- Comming Soon...
 
 ## UnformedBot
 A service provided by Coco | All Rights Reserved
