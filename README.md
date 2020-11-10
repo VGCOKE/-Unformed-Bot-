@@ -1,5 +1,9 @@
 # Unformed Bot
 - developing...
+
+## Invite Link
+- https://discord.com/api/oauth2/authorize?client_id=774531219974651905&permissions=0&scope=bot
+
 ## Powerful Custom Commands
 - Variables, including things like channel topic, membercount, and author id
 - Comes with embeds!
