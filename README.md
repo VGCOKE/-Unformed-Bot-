@@ -1,5 +1,5 @@
 # Unformed Bot
-By Coco
+developing...
 ## Powerful Custom Commands
 - Variables, including things like channel topic, membercount, and author id
 - Comes with embeds!
