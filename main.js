@@ -13,38 +13,25 @@ client.on('ready', () => {
 client.on('message', message => {
 	if(message.content === `${prefix}help`) {
 		message.channel.send('Hi! I am **Eh Bot**! Use  . for commands! ');
-	}else if(message.content === `${prefix}member`) {
-		message.channel.send(`Total Members : **${message.guild.memberCount}**`);
 	}else if(message.content === `${prefix}server`) {
-		message.channel.send(`Server Name : **${message.guild.name}**`);
-		message.channel.send(`Owner : **${message.guild.owner}**`);
+		const embed = new Discord.MessageEmbed()
+			.setColor("#3498db")
+			.setTitle('Server Info')
+			.setAuthor('[Eh Bot]')
+			.setDescription(
+				`Server name: ${message.guild.name}
+				Member Count: ${message.guild.memberCount}
+				Owner : ${message.guild.owner}`);
+		return message.channel.send(embed);
 	}else if(message.content === `${prefix}info`) {
-		message.channel.send(`Username : **${message.author}**`);
-		message.channel.send(`ID : **${message.author.id}**`);
-	}
-});
-
-client.on('message', message => {
-	if (!message.content.startsWith(prefix) || message.author.bot) return;
-
-	const args = message.content.slice(prefix.length).trim().split(/ +/);
-	const command = args.shift().toLowerCase();
-
-	if(command === "args") {
-		if(!args.length) {
-			const embed = new Discord.MessageEmbed()
-				.setColor("#ff0000")
-				.setTitle('ERROR')
-				.setDescription('Not enough arguments')
-				.setFooter('Bot Error Log');
-			return message.channel.send(embed);
-		}
-
-		message.channel.send(`**Command name:** ${command}\n**Arguments:** ${args}`);
-	} else if (command === 'ban') {
-		const taggedUser = message.mentions.users.first();
-		message.channel.send(`**You want to ban:** ${taggedUser.username}`);
-		return;
+		const embed = new Discord.MessageEmbed()
+			.setColor("#3498db")
+			.setTitle('Member Info')
+			.setAuthor('[Eh Bot]')
+			.setDescription(
+				`Username : ${message.author}
+				ID : ${message.author.id}`);
+		return message.channel.send(embed);
 	}
 });
 
