@@ -33,9 +33,16 @@ client.on('message', message => {
 				ID : ${message.author.id}`);
 		return message.channel.send(embed);
 	}else if(message.content === `${prefix}clear`) {
-		message.channel.message.fetch().then((results) => {
+		message.channel.messages.fetch().then((results) => {
 			message.channel.bulkDelete(results);
 		});
+		const embed = new Discord.MessageEmbed()
+			.setColor("#3498db")
+			.setTitle('Clear Messages')
+			.setAuthor('[Eh Bot]')
+			.setDescription(
+				`Cleared ${message.author}`);
+		return message.channel.send(embed);
 	}
 });
 
