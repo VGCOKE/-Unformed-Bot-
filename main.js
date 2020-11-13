@@ -10,6 +10,15 @@ client.on('ready', () => {
 	client.user.setActivity('bad guys!', { type: "WATCHING" });
 });
 
+client.on("guildMemberAdd", (member) => {
+	console.log("Got one gay join");
+
+	const message = `Hi! <@${member.id}> joined the server!`;
+	const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome');
+
+	welcomeChannel.send(message);
+});
+
 client.on('message', message => {
 	if(message.content === `${prefix}help`) {
 		message.channel.send('Hi! I am **Eh Bot**! Use  . for commands! ');
@@ -53,6 +62,7 @@ client.on('message', message => {
 				`Cleared ${message.author}`);
 		return message.channel.send(embed);
 	}
+
 });
 
 client.login(token);
