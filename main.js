@@ -13,6 +13,15 @@ client.on('ready', () => {
 client.on('message', message => {
 	if(message.content === `${prefix}help`) {
 		message.channel.send('Hi! I am **Eh Bot**! Use  . for commands! ');
+		const embed = new Discord.MessageEmbed()
+			.setColor("#3498db")
+			.setTitle('Commands List')
+			.addFields(
+				{ name: 'Server Info', value: '`.server`', inline: true },
+				{ name: 'Member Info', value: '`.info`', inline: true },
+				{ name: 'Clear Chat', value: '`.clear`', inline: true },
+			);
+		return message.channel.send(embed);
 	}else if(message.content === `${prefix}server`) {
 		const embed = new Discord.MessageEmbed()
 			.setColor("#3498db")
