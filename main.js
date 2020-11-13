@@ -11,14 +11,14 @@ client.on('ready', () => {
 });
 
 client.on("guildMemberAdd", (member) => {
-	console.log("Got one gay join");
+	console.log("Someone joined");
 	const message = `Hi! <@${member.id}> joined the server!`;
 	const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome');
 	welcomeChannel.send(message);
 });
 
 client.on("guildMemberRemove", (member) => {
-	console.log("Got one gay join");
+	console.log("Someone left");
 	const message = `Hi! <@${member.id}> left the server!`;
 	const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome');
 	welcomeChannel.send(message);
