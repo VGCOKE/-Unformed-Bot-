@@ -1,4 +1,17 @@
-#[Unformed Bot]
+# [Unformed Bot]
+- main.js, main config file
+- developing...
 
+## Invite Link
+- https://discord.com/api/oauth2/authorize?client_id=774531219974651905&permissions=0&scope=bot
 
-By Human666
+## Powerful Custom Commands
+- Variables, including things like channel topic, membercount, and author id
+- Comes with embeds!
+
+## Welcome Message(Comming Soon)
+- Send welcome messages and farewell messages
+- Supports embeds!
+
+## UnformedBot
+A service provided by Coco | All Rights Reserved

@@ -36,6 +36,14 @@ client.on('message', message => {
 		message.channel.message.fetch().then((results) => {
 			message.channel.bulkDelete(results);
 		});
+	}else if(message.content === `${prefix}status`) {
+		const content = message.content.replace('status', '');
+		client.user.setPresence({
+			activity: {
+				name:content,
+				type: 0,
+			},
+		});
 	}
 });
 
