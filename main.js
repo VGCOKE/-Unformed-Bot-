@@ -75,7 +75,7 @@ client.on('message', message => {
 		}).then(channel => {
 			channel.setTopic(`Click here to edit!`);
 		});
-		message.channel.send(`${message.author} created a new channel!`);
+		message.channel.send(`${message.author} has created a text channel!`);
 	}else if(message.content.startsWith(`${prefix}createvchannel`)) {
 		const args = message.content.slice(15);
 		message.guild.channels.create(`${args}`, {
@@ -83,7 +83,7 @@ client.on('message', message => {
 		}).then(channel => {
 			channel.setTopic(`Click here to edit!`);
 		});
-		message.channel.send(`${message.author} created a new channel!`);
+		message.channel.send(`${message.author} has created a voice channel!`);
 	}
 });
 
