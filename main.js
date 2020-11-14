@@ -9,6 +9,16 @@ client.on('ready', () => {
 	console.log(bot_info.prefix);
 	client.user.setStatus('available');
 	client.user.setActivity('bad guys!', { type: "WATCHING" });
+	
+	const channelID = '777172002401681440';
+	const updateMembers = (guild) => {
+		const channel = guild.channels.cache.get(channelID);
+		channel.setName(`Members: ${guild.memberCount.toLocaleString()}`);
+	};
+	client.on('guildMemberAdd', (member) => updateMembers(member, guild));
+	client.on('guildMemberRemove', (member) => updateMembers(member, guild));
+	const guild = client.guilds.cache.get('771998834980683777');
+	updateMembers(guild);
 });
 
 client.on("guildMemberAdd", (member) => {
