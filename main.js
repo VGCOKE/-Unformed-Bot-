@@ -34,6 +34,7 @@ client.on('message', message => {
 				{ name: 'Server Info', value: '`.server`', inline: true },
 				{ name: 'Member Info', value: '`.info`', inline: true },
 				{ name: 'Clear Chat', value: '`.clear`', inline: true },
+				{ name: 'Create Text Channe;', value: '`.createtext`', inline: true },
 			);
 		return message.channel.send(embed);
 	}else if(message.content === `${prefix}server`) {
@@ -66,8 +67,9 @@ client.on('message', message => {
 			.setDescription(
 				`Cleared ${message.author}`);
 		return message.channel.send(embed);
+	}else if(message.content === `${prefix}createtext`) {
+		message.guild.channels.create('new-general', { reason: 'Needed a cool new channel' });
 	}
-
 });
 
 client.login(token);
