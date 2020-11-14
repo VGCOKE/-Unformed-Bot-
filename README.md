@@ -13,5 +13,8 @@
 - Send welcome messages and farewell messages
 - Supports embeds!(Coming Soon!)
 
+## Moderation
+-All the mod commands you could ever want
+
 ## UnformedBot
 A service provided by Coco | All Rights Reserved
