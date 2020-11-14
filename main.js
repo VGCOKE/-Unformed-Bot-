@@ -34,8 +34,8 @@ client.on('message', message => {
 				{ name: 'Server Info', value: '`.server`', inline: true },
 				{ name: 'Member Info', value: '`.info`', inline: true },
 				{ name: 'Clear Chat', value: '`.clear`', inline: true },
-				{ name: 'Create Channel', value: '`.createtchannel`', inline: true },
-				{ name: 'Create Channel', value: '`.createvchannel`', inline: true },
+				{ name: 'Create Text Channel', value: '`.createtchannel`', inline: true },
+				{ name: 'Create Voice Channel', value: '`.createvchannel`', inline: true },
 			);
 		return message.channel.send(embed);
 	}else if(message.content === `${prefix}server`) {
@@ -71,7 +71,7 @@ client.on('message', message => {
 	}else if(message.content.startsWith(`${prefix}createtchannel`)) {
 		const args = message.content.slice(15);
 		message.guild.channels.create(`${args}`, {
-			type: 'voice',
+			type: 'text',
 		}).then(channel => {
 			channel.setTopic(`Click here to edit!`);
 		});
