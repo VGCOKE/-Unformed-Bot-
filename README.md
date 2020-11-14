@@ -9,9 +9,9 @@
 - Variables, including things like channel topic, membercount, and author id
 - Comes with embeds!
 
-## Welcome Message(Comming Soon)
+## Welcome Message
 - Send welcome messages and farewell messages
-- Supports embeds!
+- Supports embeds!(Coming Soon!)
 
 ## UnformedBot
 A service provided by Coco | All Rights Reserved
