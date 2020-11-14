@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const Discord = require('discord.js');
 
 const client = new Discord.Client();
@@ -36,6 +37,7 @@ client.on('message', message => {
 				{ name: 'Clear Chat', value: '`.clear`', inline: true },
 				{ name: 'Create Text Channel', value: '`.createtchannel`', inline: true },
 				{ name: 'Create Voice Channel', value: '`.createvchannel`', inline: true },
+				{ name: 'Ban Members', value: '`.ban`', inline: true },
 			);
 		return message.channel.send(embed);
 	}else if (message.content.startsWith(`${prefix}server`)) {
@@ -85,6 +87,18 @@ client.on('message', message => {
 			channel.setTopic(`Click here to edit!`);
 		});
 		message.channel.send(`${message.author} has created a voice channel!`);
+	}else if(message.content.startsWith(`${prefix}ban`)) {
+		const user = message.mentions.users.first();
+		if(user) {
+			const member = message.guild.member(user);
+			if(member) {
+				member.ban({ ression: 'you were bad!' }).then(() =>{
+					message.reply(`BANNED ${user.tag}`);
+				});
+			}else {
+				message.reply("INVALID");
+			}
+		}
 	}
 });
 
