@@ -38,15 +38,16 @@ client.on('message', message => {
 				{ name: 'Create Voice Channel', value: '`.createvchannel`', inline: true },
 			);
 		return message.channel.send(embed);
-	}else if(message.content === `${prefix}server`) {
+	}else if (message.content.startsWith(`${prefix}server`)) {
 		const embed = new Discord.MessageEmbed()
 			.setColor("#3498db")
-			.setTitle('Server Info')
+			.setTitle(`${message.guild.name}`)
 			.setAuthor('[Eh Bot]')
-			.setDescription(
-				`Server name: ${message.guild.name}
-				Member Count: ${message.guild.memberCount}
-				Owner : ${message.guild.owner}`);
+			.addFields(
+				{ name: 'Server Info', value: `${message.guild.name}` },
+				{ name: 'Members Count', value: `${message.guild.memberCount}` },
+				{ name: 'Owner', value: `${message.guild.owner}` },
+			);
 		return message.channel.send(embed);
 	}else if(message.content === `${prefix}info`) {
 		const embed = new Discord.MessageEmbed()
