@@ -11,15 +11,15 @@ client.on('ready', () => {
 });
 
 client.on("guildMemberAdd", (member) => {
-	console.log("Someone joined");
-	const message = `Hi! <@${member.id}> joined the server!`;
+	console.log(`${member.user.username} has joined`);
+	const message = `Hi! <@${member.id}> has joined the server!`;
 	const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome');
 	welcomeChannel.send(message);
 });
 
 client.on("guildMemberRemove", (member) => {
-	console.log("Someone left");
-	const message = `Bye :( <@${member.id}> left the server!`;
+	console.log(`${member.user.username} has left`);
+	const message = `Bye :( <@${member.id}> has left the server...`;
 	const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome');
 	welcomeChannel.send(message);
 });
