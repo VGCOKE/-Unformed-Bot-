@@ -9,7 +9,7 @@ client.on('ready', () => {
 	console.log(bot_info.prefix);
 	client.user.setStatus('available');
 	client.user.setActivity('bad guys!', { type: "WATCHING" });
-	
+
 	const channelID = '777172002401681440';
 	const updateMembers = (guild) => {
 		const channel = guild.channels.cache.get(channelID);
