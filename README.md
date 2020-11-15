@@ -17,5 +17,11 @@
 ## Moderation
 -All the mod commands you could ever want
 
+
+
+![Screenshot 2020-11-15 125709](https://user-images.githubusercontent.com/68257361/99170897-6a51c280-2742-11eb-88bc-eb3fc551f1ad.png)
+
+
+
 ## UnformedBot
 A service provided by Coco | All Rights Reserved
