@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const Discord = require('discord.js');
 
 const client = new Discord.Client();
@@ -15,8 +14,8 @@ client.on('ready', () => {
 		const channel = guild.channels.cache.get(channelID);
 		channel.setName(`Members: ${guild.memberCount.toLocaleString()}`);
 	};
-	client.on('guildMemberAdd', (member) => updateMembers(member, guild));
-	client.on('guildMemberRemove', (member) => updateMembers(member, guild));
+	client.on('guildMemberAdd', (member) => updateMembers(member.guild));
+	client.on('guildMemberRemove', (member) => updateMembers(member.guild));
 	const guild = client.guilds.cache.get('771998834980683777');
 	updateMembers(guild);
 });
@@ -103,7 +102,7 @@ client.on('message', message => {
 			const member = message.guild.member(user);
 			if(member) {
 				member.ban({ ression: 'you were bad!' }).then(() =>{
-					message.reply(`BANNED ${user.tag}`);
+					message.channel.send(`**BANNED ${user.tag}**`);
 				});
 			}else {
 				message.reply("INVALID");
