@@ -8,7 +8,6 @@
 ## Powerful Custom Commands
 - Variables, including things like channel topic, membercount, and author id
 - Comes with embeds!
-![Screenshot 2020-11-15 125709](https://user-images.githubusercontent.com/68257361/99170275-3b3b5100-2742-11eb-9ca1-5232c0a69878.png)
 
 
 ## Welcome Message
